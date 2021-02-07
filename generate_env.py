@@ -63,7 +63,7 @@ import numpy as np
 
     """
     for name in stage_names:
-        env_class = 'class {}:'.format(''.join([s.capitalize() for s in name.split('_')]))
+        env_class = 'class {}(gym.Env):'.format(''.join([s.capitalize() for s in name.split('_')]))
         with open('gym_{}/envs/{}.py'.format(env_name, name), 'w') as f:
             f.write(head + env_class + tail)
     pass
