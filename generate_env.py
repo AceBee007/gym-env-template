@@ -10,7 +10,7 @@ def make_files(env_name:str, stage_names):
     with open(registry_init, 'w') as f:
         f.write('from gym.envs.registration import register\n\n')
         for name in stage_names:
-            register_str = "register(\n    id='{}',\n    entry_point='gym_{}.envs:{}',\n)\n".format(name, env_name, ''.join([s.capitalize() for s in name.split('_')]))
+            register_str = "register(\n    id='{}-v0',\n    entry_point='gym_{}.envs:{}',\n)\n".format(name, env_name, ''.join([s.capitalize() for s in name.split('_')]))
             f.write(register_str)
     envs_init = 'gym_{}/envs/__init__.py'.format(env_name)
     with open(envs_init, 'w') as f:
