@@ -21,6 +21,7 @@ def make_files(env_name:str, stage_names):
     head = """import gym
 from gym import error, spaces, utils
 from gym.utils import seeding
+import numpy as np
 
 """
     
@@ -41,7 +42,7 @@ from gym.utils import seeding
     def step(self, action):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         reward = 0
-        down = False
+        done = False
         info = {} # You may need to add some extra information
         '''
         Do some simulation
