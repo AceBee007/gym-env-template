@@ -12,6 +12,7 @@ mkdir my_gym_env && cd my_gym_env
 curl -o tmp.py -fsSL https://raw.githubusercontent.com/AceBee007/gym-env-template/main/generate_env.py && python tmp.py && rm tmp.py
 
 ```
+and edit the `gym_{env_name}/envs/{stage_name}.py`.
 
 ### notes
 You will be asked about
